@@ -3,23 +3,180 @@
 	<parent>
 		<groupId>org.knime</groupId>
 		<artifactId>knime-json</artifactId>
-		<version>${revision}${changelist}</version>
+		<version>5.2.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>org.knime.json.tests</artifactId>
-	<packaging>eclipse-test-plugin</packaging>
+	<packaging>jar</packaging>
   
     <properties>
         <revision>5.2.0</revision>
 	<sonar.sources/>
 	<sonar.tests>src</sonar.tests>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
     </properties>
+
+	<dependencies>
+		<!-- Use JUnit Jupiter for testing. -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.9.2</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Use Jazzer for fuzzing -->
+		<dependency>
+			<groupId>com.code-intelligence</groupId>
+			<artifactId>jazzer-junit</artifactId>
+			<version>0.22.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.knime</groupId>
+			<artifactId>knime-json</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../knime-json.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.knime</groupId>
+			<artifactId>knime-core</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../knime-core.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.knime</groupId>
+			<artifactId>knime-core-util</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../knime-core-util.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.knime</groupId>
+			<artifactId>knime-textprocessing</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../knime-textprocessing.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.15.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>eclipse-jface</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../eclipse-jface.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache</groupId>
+			<artifactId>log4j-knime</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../log4j-knime.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../commons-lang3.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>core-runtime</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../eclipse-core-runtime.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>eclipse-osgi</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../eclipse-osgi.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>jakarta.json</groupId>
+			<artifactId>jakarta-json</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../jakarta-json.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fastxml</groupId>
+			<artifactId>jackson-datatype-jsonp</artifactId>
+			<version>5.2.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../jackson-datatype-jakarta-jsonp.jar</systemPath>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.core.runtime -->
+		<dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.runtime</artifactId>
+			<version>3.29.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.felix/org.apache.felix.scr -->
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.scr</artifactId>
+			<version>2.2.6</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.6.0</version>
+			<scope>test</scope>
+		</dependency>
+
+
+
+
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>cifuzz</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<configuration>
+							<formats>${cifuzz.report.format}</formats>
+							<outputDirectory>${cifuzz.report.output}</outputDirectory>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
-				<version>${tycho.version}</version>
+				<version>3.0.3</version>
 				<configuration>
 					<dependency-resolution>
 						<extraRequirements>
@@ -36,6 +193,41 @@
 						</extraRequirements>
 					</dependency-resolution>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.9</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.1.0</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.1.2</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
 			</plugin>
 		</plugins>
 	</build>

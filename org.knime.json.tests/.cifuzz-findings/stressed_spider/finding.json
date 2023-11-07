@@ -1,0 +1,100 @@
+{
+  "Origin": "",
+  "name": "stressed_spider",
+  "type": "WARNING",
+  "logs": [
+    "== Java Exception: java.lang.ExceptionInInitializerError",
+    "\tat org.knime.core.node.NodeLogger.copyCurrentLog4j(NodeLogger.java:433)",
+    "\tat org.knime.core.node.NodeLogger.initLog4J(NodeLogger.java:386)",
+    "\tat org.knime.core.node.NodeLogger.\u003cclinit\u003e(NodeLogger.java:318)",
+    "\tat org.knime.ext.textprocessing.util.TermDocumentDeSerializationUtil.\u003cclinit\u003e(TermDocumentDeSerializationUtil.java:110)",
+    "\tat org.knime.json.fuzzing.Fuzzer.myFuzzTest(Fuzzer.java:41)",
+    "Caused by: java.lang.NullPointerException: Cannot invoke \"org.osgi.framework.BundleContext.getProperty(String)\" because the return value of \"org.eclipse.core.internal.runtime.InternalPlatform.getBundleContext()\" is null",
+    "\tat org.eclipse.core.internal.runtime.InternalPlatform.getOS(InternalPlatform.java:421)",
+    "\tat org.eclipse.core.runtime.Platform.getOS(Platform.java:1086)",
+    "\tat org.knime.core.util.FileUtil.\u003cclinit\u003e(FileUtil.java:139)",
+    "\t... 5 more",
+    "== libFuzzer crashing input ==",
+    "MS: 0 ; base unit: 0000000000000000000000000000000000000000",
+    "",
+    "",
+    "artifact_prefix='/tmp/jazzer-out-4277720753/'; Test unit written to .cifuzz-findings/stressed_spider/crashing-input",
+    "Base64: ",
+    "Done 1 runs in 0 second(s)",
+    "INFO: Instrumented org.junit.jupiter.engine.descriptor.JupiterTestDescriptor$ExceptionHandlerInvoker (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.jupiter.params.ParameterizedTestParameterResolver$CloseableArgument (took 0 ms, size +10%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.ExtensionContext$Store$CloseableResource (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.AfterEachCallback (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.TestInstancePreDestroyCallback (took 0 ms, size +8%)",
+    "INFO: Instrumented org.junit.platform.engine.TestExecutionResult (took 1 ms, size +7%)",
+    "INFO: Instrumented org.junit.platform.engine.TestExecutionResult$Status (took 0 ms, size +10%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.TestWatcher (took 0 ms, size +8%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.AfterAllCallback (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.platform.launcher.core.OutcomeDelayingEngineExecutionListener$Outcome (took 1 ms, size +8%)"
+  ],
+  "details": "java.lang.ExceptionInInitializerError",
+  "more_details": {
+    "id": "java_exception"
+  },
+  "created_at": "2023-10-26T17:20:30.915394912+02:00",
+  "input_file": ".cifuzz-findings/stressed_spider/crashing-input",
+  "stack_trace": [
+    {
+      "SourceFile": "NodeLogger.java",
+      "Line": 433,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.node.NodeLogger.copyCurrentLog4j"
+    },
+    {
+      "SourceFile": "NodeLogger.java",
+      "Line": 386,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.node.NodeLogger.initLog4J"
+    },
+    {
+      "SourceFile": "NodeLogger.java",
+      "Line": 318,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.node.NodeLogger.\u003cclinit\u003e"
+    },
+    {
+      "SourceFile": "TermDocumentDeSerializationUtil.java",
+      "Line": 110,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.ext.textprocessing.util.TermDocumentDeSerializationUtil.\u003cclinit\u003e"
+    },
+    {
+      "SourceFile": "src/test/java/org/knime/json/fuzzing/Fuzzer.java",
+      "Line": 41,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.json.fuzzing.Fuzzer.myFuzzTest"
+    },
+    {
+      "SourceFile": "InternalPlatform.java",
+      "Line": 421,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.eclipse.core.internal.runtime.InternalPlatform.getOS"
+    },
+    {
+      "SourceFile": "Platform.java",
+      "Line": 1086,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.eclipse.core.runtime.Platform.getOS"
+    },
+    {
+      "SourceFile": "FileUtil.java",
+      "Line": 139,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.util.FileUtil.\u003cclinit\u003e"
+    }
+  ],
+  "fuzz_test": "org.knime.json.fuzzing.Fuzzer"
+}

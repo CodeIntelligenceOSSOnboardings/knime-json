@@ -1,0 +1,86 @@
+{
+  "Origin": "",
+  "name": "strange_elephant",
+  "type": "WARNING",
+  "logs": [
+    "== Java Exception: java.lang.ExceptionInInitializerError",
+    "\tat org.knime.ext.textprocessing.util.TermDocumentDeSerializationUtil.\u003cclinit\u003e(TermDocumentDeSerializationUtil.java:110)",
+    "\tat org.knime.json.fuzzing.Fuzzer.myFuzzTest(Fuzzer.java:31)",
+    "Caused by: java.lang.SecurityException: class \"org.knime.core.node.InvalidSettingsException\"'s signer information does not match signer information of other classes in the same package",
+    "\tat java.base/java.lang.ClassLoader.checkCerts(ClassLoader.java:1163)",
+    "\tat java.base/java.lang.ClassLoader.preDefineClass(ClassLoader.java:907)",
+    "\tat java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1015)",
+    "\tat java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)",
+    "\tat java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)",
+    "\tat java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)",
+    "\tat java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)",
+    "\tat java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)",
+    "\tat java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)",
+    "\tat java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)",
+    "\tat org.knime.core.node.NodeLogger.copyCurrentLog4j(NodeLogger.java:433)",
+    "\tat org.knime.core.node.NodeLogger.initLog4J(NodeLogger.java:386)",
+    "\tat org.knime.core.node.NodeLogger.\u003cclinit\u003e(NodeLogger.java:318)",
+    "\t... 2 more",
+    "== libFuzzer crashing input ==",
+    "MS: 0 ; base unit: 0000000000000000000000000000000000000000",
+    "",
+    "",
+    "artifact_prefix='/tmp/jazzer-out-2317005562/'; Test unit written to .cifuzz-findings/strange_elephant/crashing-input",
+    "Base64: ",
+    "Done 1 runs in 0 second(s)",
+    "INFO: Instrumented org.junit.jupiter.engine.descriptor.JupiterTestDescriptor$ExceptionHandlerInvoker (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.jupiter.params.ParameterizedTestParameterResolver$CloseableArgument (took 0 ms, size +10%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.ExtensionContext$Store$CloseableResource (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.AfterEachCallback (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.TestInstancePreDestroyCallback (took 0 ms, size +8%)",
+    "INFO: Instrumented org.junit.platform.engine.TestExecutionResult (took 0 ms, size +7%)",
+    "INFO: Instrumented org.junit.platform.engine.TestExecutionResult$Status (took 0 ms, size +10%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.TestWatcher (took 0 ms, size +8%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.AfterAllCallback (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.platform.launcher.core.OutcomeDelayingEngineExecutionListener$Outcome (took 0 ms, size +8%)"
+  ],
+  "details": "java.lang.ExceptionInInitializerError",
+  "more_details": {
+    "id": "java_exception"
+  },
+  "created_at": "2023-10-26T13:26:03.938908786+02:00",
+  "input_file": ".cifuzz-findings/strange_elephant/crashing-input",
+  "stack_trace": [
+    {
+      "SourceFile": "TermDocumentDeSerializationUtil.java",
+      "Line": 110,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.ext.textprocessing.util.TermDocumentDeSerializationUtil.\u003cclinit\u003e"
+    },
+    {
+      "SourceFile": "src/test/java/org/knime/json/fuzzing/Fuzzer.java",
+      "Line": 31,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.json.fuzzing.Fuzzer.myFuzzTest"
+    },
+    {
+      "SourceFile": "NodeLogger.java",
+      "Line": 433,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.node.NodeLogger.copyCurrentLog4j"
+    },
+    {
+      "SourceFile": "NodeLogger.java",
+      "Line": 386,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.node.NodeLogger.initLog4J"
+    },
+    {
+      "SourceFile": "NodeLogger.java",
+      "Line": 318,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.node.NodeLogger.\u003cclinit\u003e"
+    }
+  ],
+  "fuzz_test": "org.knime.json.fuzzing.Fuzzer"
+}

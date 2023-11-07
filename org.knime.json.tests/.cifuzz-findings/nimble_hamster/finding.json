@@ -1,0 +1,54 @@
+{
+  "Origin": "",
+  "name": "nimble_hamster",
+  "type": "WARNING",
+  "input_data": "Mq4=",
+  "logs": [
+    "== Java Exception: java.lang.NoClassDefFoundError: org/knime/core/node/util/CheckUtils",
+    "\tat org.knime.json.util.Json2Xml.specialCaseRootValueNode(Json2Xml.java:530)",
+    "\tat org.knime.json.util.Json2Xml.toXml(Json2Xml.java:499)",
+    "\tat org.knime.json.fuzzing.Json2XmlFuzzer.myFuzzTest(Json2XmlFuzzer.java:37)",
+    "Caused by: java.lang.ClassNotFoundException: org.knime.core.node.util.CheckUtils",
+    "\tat java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)",
+    "\tat java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)",
+    "\tat java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)",
+    "\t... 3 more",
+    "== libFuzzer crashing input ==",
+    "MS: 0 ; base unit: 0000000000000000000000000000000000000000",
+    "0x32,0xae,",
+    "2\\256",
+    "artifact_prefix='/tmp/jazzer-out-1657098915/'; Test unit written to .cifuzz-findings/nimble_hamster/crashing-input",
+    "Base64: Mq4=",
+    "Done 3 runs in 0 second(s)"
+  ],
+  "details": "java.lang.NoClassDefFoundError: org/knime/core/node/util/CheckUtils",
+  "more_details": {
+    "id": "java_exception"
+  },
+  "created_at": "2023-10-24T15:09:16.413431878+02:00",
+  "input_file": ".cifuzz-findings/nimble_hamster/crashing-input",
+  "stack_trace": [
+    {
+      "SourceFile": "Json2Xml.java",
+      "Line": 530,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.json.util.Json2Xml.specialCaseRootValueNode"
+    },
+    {
+      "SourceFile": "Json2Xml.java",
+      "Line": 499,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.json.util.Json2Xml.toXml"
+    },
+    {
+      "SourceFile": "src/test/java/org/knime/json/fuzzing/Json2XmlFuzzer.java",
+      "Line": 37,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.json.fuzzing.Json2XmlFuzzer.myFuzzTest"
+    }
+  ],
+  "fuzz_test": "org.knime.json.fuzzing.Json2XmlFuzzer"
+}

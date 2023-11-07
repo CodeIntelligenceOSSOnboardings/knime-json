@@ -4,13 +4,13 @@
 	<parent>
 		<groupId>org.knime</groupId>
 		<artifactId>knime-json</artifactId>
-		<version>${revision}${changelist}</version>
+		<version>5.2.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<groupId>org.knime</groupId>
 	<artifactId>org.knime.json.filehandling</artifactId>
-	<packaging>${packaging.default}</packaging>
+	<packaging>jar</packaging>
 
 	<properties>
 		<revision>5.2.0</revision>

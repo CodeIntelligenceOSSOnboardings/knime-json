@@ -1,0 +1,181 @@
+cifuzz version 2.8.1
+Running on linux/amd64
+Sending HTTP request: GET /v1/projects
+Received response for HTTP request: 200 /v1/projects
+You are authenticated.
+Bundle output path: /tmp/cifuzz-bundle-216938545/fuzz_tests.tar.gz
+Checking dependency: java version >= 1.8.0
+Found Java version 17.0.8 in PATH: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+Checking dependency: mvn 
+Working directory: /home/henry/knime-json/org.knime.json.tests
+Command: /usr/bin/mvn test-compile -Pcifuzz -B
+[WARNING] The POM for com.nuance.clu.maven:maven-feature-branch-extension:jar:1.0.2.0011-fb0f827 is missing, no dependency information available
+[WARNING] Failed to read extensions descriptor /home/henry/knime-json/.mvn/extensions.xml: Plugin com.nuance.clu.maven:maven-feature-branch-extension:1.0.2.0011-fb0f827 or one of its dependencies could not be resolved: Failure to find com.nuance.clu.maven:maven-feature-branch-extension:jar:1.0.2.0011-fb0f827 in https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.knime:org.knime.json.tests:jar:5.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.systemPath' for org.knime:knime-json:jar should not point at files within the project directory, ${basedir}/../knime-json.jar will be unresolvable by dependent projects @ line 40, column 16
+[WARNING] 'dependencies.dependency.systemPath' for org.knime:knime-core-util:jar should not point at files within the project directory, ${basedir}/../knime-core-util.jar will be unresolvable by dependent projects @ line 48, column 16
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------< org.knime:org.knime.json.tests >-------------------
+[INFO] Building org.knime.json.tests 5.2.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.9:prepare-agent (default) @ org.knime.json.tests ---
+[INFO] argLine set to -javaagent:/home/henry/.m2/repository/org/jacoco/org.jacoco.agent/0.8.9/org.jacoco.agent-0.8.9-runtime.jar=destfile=/home/henry/knime-json/org.knime.json.tests/target/jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ org.knime.json.tests ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/henry/knime-json/org.knime.json.tests/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ org.knime.json.tests ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ org.knime.json.tests ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ org.knime.json.tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.319 s
+[INFO] Finished at: 2023-10-24T20:24:54+02:00
+[INFO] ------------------------------------------------------------------------
+Working directory: /home/henry/knime-json/org.knime.json.tests
+Command: /usr/bin/mvn help:evaluate -Dexpression=project -DforceStdout --quiet -Pcifuzz -B
+Working directory: /home/henry/knime-json/org.knime.json.tests
+Command: /usr/bin/mvn dependency:build-classpath -Dmdep.outputFile=/tmp/cifuzz-maven-dependencies-340569514/cp -Pcifuzz -B
+[WARNING] The POM for com.nuance.clu.maven:maven-feature-branch-extension:jar:1.0.2.0011-fb0f827 is missing, no dependency information available
+[WARNING] Failed to read extensions descriptor /home/henry/knime-json/.mvn/extensions.xml: Plugin com.nuance.clu.maven:maven-feature-branch-extension:1.0.2.0011-fb0f827 or one of its dependencies could not be resolved: Failure to find com.nuance.clu.maven:maven-feature-branch-extension:jar:1.0.2.0011-fb0f827 in https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.knime:org.knime.json.tests:jar:5.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.systemPath' for org.knime:knime-json:jar should not point at files within the project directory, ${basedir}/../knime-json.jar will be unresolvable by dependent projects @ line 40, column 16
+[WARNING] 'dependencies.dependency.systemPath' for org.knime:knime-core-util:jar should not point at files within the project directory, ${basedir}/../knime-core-util.jar will be unresolvable by dependent projects @ line 48, column 16
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------------< org.knime:org.knime.json.tests >-------------------
+[INFO] Building org.knime.json.tests 5.2.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:build-classpath (default-cli) @ org.knime.json.tests ---
+[INFO] Wrote classpath file '/tmp/cifuzz-maven-dependencies-340569514/cp'.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.369 s
+[INFO] Finished at: 2023-10-24T20:24:56+02:00
+[INFO] ------------------------------------------------------------------------
+Command: /usr/lib/jvm/java-17-openjdk-amd64/bin/java -cp /home/henry/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.jar:/home/henry/.m2/repository/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar:/home/henry/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/henry/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar:/home/henry/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/henry/.m2/repository/com/code-intelligence/jazzer-junit/0.22.1/jazzer-junit-0.22.1.jar:/home/henry/.m2/repository/com/code-intelligence/jazzer-api/0.22.1/jazzer-api-0.22.1.jar:/home/henry/.m2/repository/com/code-intelligence/jazzer/0.22.1/jazzer-0.22.1.jar:/home/henry/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.0/junit-jupiter-params-5.9.0.jar:/home/henry/.m2/repository/org/junit/platform/junit-platform-commons/1.9.0/junit-platform-commons-1.9.0.jar:/home/henry/.m2/repository/org/junit/platform/junit-platform-launcher/1.9.0/junit-platform-launcher-1.9.0.jar:/home/henry/knime-json/org.knime.json.tests/../knime-json.jar:/home/henry/knime-json/org.knime.json.tests/../knime-core-util.jar:/home/henry/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/home/henry/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/home/henry/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/home/henry/knime-json/org.knime.json.tests/target/classes:/home/henry/knime-json/org.knime.json.tests/target/test-classes:/home/henry/.local/share/cifuzz/share/java/list-fuzz-tests.jar com.code_intelligence.cifuzz.helper.ListFuzzTests
+Creating bundle...
+Working directory: /home/henry/knime-json/org.knime.json.tests
+Command: /usr/bin/mvn help:evaluate -Dexpression=project -DforceStdout --quiet -Pcifuzz -B
+Found Maven source at: /home/henry/knime-json/org.knime.json.tests/src/main/java
+Ignoring Maven source directory /home/henry/knime-json/org.knime.json.tests/src/main/java: directory does not exist
+Working directory: /home/henry/knime-json/org.knime.json.tests
+Command: /usr/bin/mvn help:evaluate -Dexpression=project -DforceStdout --quiet -Pcifuzz -B
+Found Maven test source at: /home/henry/knime-json/org.knime.json.tests/src/test/java
+Created manifest.jar at /tmp/cifuzz-bundle-470737034/org.knime.json.fuzzing.Json2XmlFuzzer/manifest.jar
+runtime dept: /home/henry/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.jar
+runtime dept: /home/henry/.m2/repository/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar
+runtime dept: /home/henry/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar
+runtime dept: /home/henry/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar
+runtime dept: /home/henry/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar
+runtime dept: /home/henry/.m2/repository/com/code-intelligence/jazzer-junit/0.22.1/jazzer-junit-0.22.1.jar
+runtime dept: /home/henry/.m2/repository/com/code-intelligence/jazzer-api/0.22.1/jazzer-api-0.22.1.jar
+runtime dept: /home/henry/.m2/repository/com/code-intelligence/jazzer/0.22.1/jazzer-0.22.1.jar
+runtime dept: /home/henry/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.0/junit-jupiter-params-5.9.0.jar
+runtime dept: /home/henry/.m2/repository/org/junit/platform/junit-platform-commons/1.9.0/junit-platform-commons-1.9.0.jar
+runtime dept: /home/henry/.m2/repository/org/junit/platform/junit-platform-launcher/1.9.0/junit-platform-launcher-1.9.0.jar
+runtime dept: /home/henry/knime-json/org.knime.json.tests/../knime-json.jar
+runtime dept: /home/henry/knime-json/org.knime.json.tests/../knime-core-util.jar
+runtime dept: /home/henry/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar
+runtime dept: /home/henry/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar
+runtime dept: /home/henry/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar
+runtime dept: /home/henry/knime-json/org.knime.json.tests/target/classes
+runtime dept: /home/henry/knime-json/org.knime.json.tests/target/test-classes
+Bundle uses eclipse-temurin:20 as docker image
+Current Git commit: daf27d6a786f31695133836f079efc48cdc98c12
+Current Git branch: master
+The Git repository has uncommitted changes. (Archive) Metadata may be inaccurate.
+Content of bundle.yaml:
+run_environment:
+    docker: eclipse-temurin:20
+code_revision:
+    git:
+        commit: daf27d6a786f31695133836f079efc48cdc98c12
+        branch: master
+fuzzers:
+    - name: org.knime.json.fuzzing.Json2XmlFuzzer
+      path: ""
+      engine: JAVA_LIBFUZZER
+      build_dir: /home/henry/knime-json/org.knime.json.tests
+      runtime_paths:
+        - org.knime.json.fuzzing.Json2XmlFuzzer/manifest.jar
+        - runtime_deps/junit-jupiter-engine-5.9.2.jar
+        - runtime_deps/junit-platform-engine-1.9.2.jar
+        - runtime_deps/opentest4j-1.2.0.jar
+        - runtime_deps/junit-jupiter-api-5.9.2.jar
+        - runtime_deps/apiguardian-api-1.1.2.jar
+        - runtime_deps/jazzer-junit-0.22.1.jar
+        - runtime_deps/jazzer-api-0.22.1.jar
+        - runtime_deps/jazzer-0.22.1.jar
+        - runtime_deps/junit-jupiter-params-5.9.0.jar
+        - runtime_deps/junit-platform-commons-1.9.0.jar
+        - runtime_deps/junit-platform-launcher-1.9.0.jar
+        - runtime_deps/knime-json.jar
+        - runtime_deps/knime-core-util.jar
+        - runtime_deps/jackson-databind-2.15.3.jar
+        - runtime_deps/jackson-annotations-2.15.3.jar
+        - runtime_deps/jackson-core-2.15.3.jar
+        - runtime_deps/target/test-classes
+      engine_options:
+        flags:
+            - --instrumentation_includes=com.**:org.**
+Content of bundle /tmp/cifuzz-bundle-216938545/fuzz_tests.tar.gz:
+ -rw-r--r--      105 source_map.json
+ -rw-r--r--      371 org.knime.json.fuzzing.Json2XmlFuzzer/manifest.jar
+ -rw-r--r--   246608 runtime_deps/junit-jupiter-engine-5.9.2.jar
+ -rw-r--r--   189223 runtime_deps/junit-platform-engine-1.9.2.jar
+ -rw-r--r--     7653 runtime_deps/opentest4j-1.2.0.jar
+ -rw-r--r--   207759 runtime_deps/junit-jupiter-api-5.9.2.jar
+ -rw-r--r--     6806 runtime_deps/apiguardian-api-1.1.2.jar
+ -rw-r--r--    55886 runtime_deps/jazzer-junit-0.22.1.jar
+ -rw-r--r--    28662 runtime_deps/jazzer-api-0.22.1.jar
+ -rw-r--r-- 11284942 runtime_deps/jazzer-0.22.1.jar
+ -rw-r--r--   578286 runtime_deps/junit-jupiter-params-5.9.0.jar
+ -rw-r--r--   102703 runtime_deps/junit-platform-commons-1.9.0.jar
+ -rw-r--r--   169214 runtime_deps/junit-platform-launcher-1.9.0.jar
+ -rw-r--r-- 16958289 runtime_deps/knime-json.jar
+ -rw-r--r--   694330 runtime_deps/knime-core-util.jar
+ -rw-r--r--  1620120 runtime_deps/jackson-databind-2.15.3.jar
+ -rw-r--r--    75565 runtime_deps/jackson-annotations-2.15.3.jar
+ -rw-r--r--   549233 runtime_deps/jackson-core-2.15.3.jar
+ drwxr-xr-x        0 runtime_deps/target/test-classes
+ drwxr-xr-x        0 runtime_deps/target/test-classes/org
+ drwxr-xr-x        0 runtime_deps/target/test-classes/org/knime
+ drwxr-xr-x        0 runtime_deps/target/test-classes/org/knime/json
+ drwxr-xr-x        0 runtime_deps/target/test-classes/org/knime/json/fuzzing
+ -rw-r--r--     2345 runtime_deps/target/test-classes/org/knime/json/fuzzing/Json2XmlFuzzer.class
+ drwxr-xr-x        0 runtime_deps/target/test-classes/org/knime/json/fuzzing/Json2XmlFuzzerInputs
+ drwxr-xr-x        0 runtime_deps/target/test-classes/org/knime/json/fuzzing/Json2XmlFuzzerInputs/myFuzzTest
+ -rw-r--r--        2 runtime_deps/target/test-classes/org/knime/json/fuzzing/Json2XmlFuzzerInputs/myFuzzTest/nimble_hamster-crash-a96cdbbd441b322349d02d0ce2558ccf75d96dfb
+ -rw-r--r--      652 runtime_deps/target/test-classes/org/knime/json/fuzzing/MyErrorHandler.class
+ -rw-r--r--     1319 bundle.yaml
+ drwxr-xr-x        0 work_dir
+ -rw-r--r--    12264 build.log
+Sending HTTP request: POST /v1/projects/Knime-json-e9be130a/artifacts/7481:run
+Received response for HTTP request: 200 /v1/projects/Knime-json-e9be130a/artifacts/7481:run
+Successfully started fuzzing run. To view findings and coverage, open:
+    https://app.code-intelligence.com/dashboard/projects/Knime-json-e9be130a/campaign_runs/ed3d7b02-fb28-4e95-9f13-5b52fe816167/overview?origin=cli

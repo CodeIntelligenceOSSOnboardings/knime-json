@@ -1,0 +1,95 @@
+{
+  "Origin": "",
+  "name": "rebellious_panda",
+  "type": "WARNING",
+  "logs": [
+    "== Java Exception: java.lang.NoClassDefFoundError: org/eclipse/core/runtime/IPath",
+    "\tat org.eclipse.core.runtime.Platform.getBundle(Platform.java:1336)",
+    "\tat org.knime.core.eclipseUtil.OSGIHelper.getBundle(OSGIHelper.java:217)",
+    "\tat org.knime.core.node.KNIMEConstants.\u003cclinit\u003e(KNIMEConstants.java:470)",
+    "\tat org.knime.core.node.NodeLogger.initLog4J(NodeLogger.java:347)",
+    "\tat org.knime.core.node.NodeLogger.\u003cclinit\u003e(NodeLogger.java:318)",
+    "\tat org.knime.ext.textprocessing.util.TermDocumentDeSerializationUtil.\u003cclinit\u003e(TermDocumentDeSerializationUtil.java:110)",
+    "\tat org.knime.json.fuzzing.Fuzzer.myFuzzTest(Fuzzer.java:31)",
+    "Caused by: java.lang.ClassNotFoundException: org.eclipse.core.runtime.IPath",
+    "\tat java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)",
+    "\tat java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)",
+    "\tat java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)",
+    "\t... 7 more",
+    "== libFuzzer crashing input ==",
+    "MS: 0 ; base unit: 0000000000000000000000000000000000000000",
+    "",
+    "",
+    "artifact_prefix='/tmp/jazzer-out-2850756814/'; Test unit written to .cifuzz-findings/rebellious_panda/crashing-input",
+    "Base64: ",
+    "Done 1 runs in 0 second(s)",
+    "INFO: Instrumented org.junit.jupiter.engine.descriptor.JupiterTestDescriptor$ExceptionHandlerInvoker (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.jupiter.params.ParameterizedTestParameterResolver$CloseableArgument (took 0 ms, size +10%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.ExtensionContext$Store$CloseableResource (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.AfterEachCallback (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.TestInstancePreDestroyCallback (took 0 ms, size +8%)",
+    "INFO: Instrumented org.junit.platform.engine.TestExecutionResult (took 1 ms, size +7%)",
+    "INFO: Instrumented org.junit.platform.engine.TestExecutionResult$Status (took 0 ms, size +10%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.TestWatcher (took 0 ms, size +8%)",
+    "INFO: Instrumented org.junit.jupiter.api.extension.AfterAllCallback (took 0 ms, size +0%)",
+    "INFO: Instrumented org.junit.platform.launcher.core.OutcomeDelayingEngineExecutionListener$Outcome (took 0 ms, size +8%)"
+  ],
+  "details": "java.lang.NoClassDefFoundError: org/eclipse/core/runtime/IPath",
+  "more_details": {
+    "id": "java_exception"
+  },
+  "created_at": "2023-10-26T12:57:31.753447317+02:00",
+  "input_file": ".cifuzz-findings/rebellious_panda/crashing-input",
+  "stack_trace": [
+    {
+      "SourceFile": "Platform.java",
+      "Line": 1336,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.eclipse.core.runtime.Platform.getBundle"
+    },
+    {
+      "SourceFile": "OSGIHelper.java",
+      "Line": 217,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.eclipseUtil.OSGIHelper.getBundle"
+    },
+    {
+      "SourceFile": "KNIMEConstants.java",
+      "Line": 470,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.node.KNIMEConstants.\u003cclinit\u003e"
+    },
+    {
+      "SourceFile": "NodeLogger.java",
+      "Line": 347,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.node.NodeLogger.initLog4J"
+    },
+    {
+      "SourceFile": "NodeLogger.java",
+      "Line": 318,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.core.node.NodeLogger.\u003cclinit\u003e"
+    },
+    {
+      "SourceFile": "TermDocumentDeSerializationUtil.java",
+      "Line": 110,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.ext.textprocessing.util.TermDocumentDeSerializationUtil.\u003cclinit\u003e"
+    },
+    {
+      "SourceFile": "src/test/java/org/knime/json/fuzzing/Fuzzer.java",
+      "Line": 31,
+      "Column": 0,
+      "FrameNumber": 0,
+      "Function": "org.knime.json.fuzzing.Fuzzer.myFuzzTest"
+    }
+  ],
+  "fuzz_test": "org.knime.json.fuzzing.Fuzzer"
+}

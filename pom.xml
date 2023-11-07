@@ -2,15 +2,15 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.knime.maven</groupId>
-		<artifactId>ap.parent</artifactId>
-		<version>5.2.0</version>
-	</parent>
+<!--	<parent>-->
+<!--		<groupId>org.knime.maven</groupId>-->
+<!--		<artifactId>ap.parent</artifactId>-->
+<!--		<version>5.2.0</version>-->
+<!--	</parent>-->
 
 	<groupId>org.knime</groupId>
 	<artifactId>knime-json</artifactId>
-	<version>${revision}${changelist}</version>
+	<version>5.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
     <properties>
@@ -26,7 +26,7 @@
         <module>org.knime.json.filehandling/libs/fetch_jars</module>
 
 		<module>org.knime.json</module>
-		<module>org.knime.features.json</module>
+<!--		<module>org.knime.features.json</module>-->
 		<module>org.knime.update.json</module>
 		<module>org.knime.json.tests</module>
 		<module>org.knime.json.filehandling </module>
